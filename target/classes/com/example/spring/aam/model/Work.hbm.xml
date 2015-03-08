@@ -1,0 +1,21 @@
+<?xml version="1.0"?><!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.example.spring.aam.model">
+	<class name="Works" table="works">
+		<id name="workID" column="work_id">
+			<generator class="sequence" />
+		</id>
+
+		<property name="workStartDate" column="work_start_date" />
+		<property name="workEndDate" column="work_end_date" />
+		<many-to-one name="assetID" column="asset_id" not-null="true"
+			class="Asset" />
+		<many-to-one name="customerID" column="customer_id"
+			not-null="true" class="Customer" />
+
+
+
+
+	</class>
+</hibernate-mapping>

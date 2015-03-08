@@ -1,0 +1,16 @@
+<?xml version="1.0"?><!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.example.spring.aam.model">
+    <class name="Resource" table="resources">
+        <id name="resourceId" column="resource_id">
+            <generator class="sequence" />
+        </id>
+        <version name="version" column="version" />
+        <many-to-one name="assetType" column="asset_type_id" not-null="true" class="AssetType" />
+        <property name="resourceFirstName" column="resource_first_name" />
+        <property name="resourceLastName" column="resource_last_name" />
+        <property name="resourceAddress" column="resource_address" />
+        <property name="resourceEmail" column="resource_email" unique="true" />
+    </class>
+</hibernate-mapping>

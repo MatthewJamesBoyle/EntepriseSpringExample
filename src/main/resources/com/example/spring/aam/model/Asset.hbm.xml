@@ -1,0 +1,26 @@
+<?xml version="1.0"?><!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.example.spring.aam.model">
+	<class name="Asset" table="assets">
+		<id name="id" column="asset_id">
+			<generator class="sequence" />
+		</id>
+		<property name="assetName" column="asset_name" unique="true" />
+		<property name="assetNumber" column="asset_number" unique="true" />
+		<many-to-one name="assetTypeID" column="asset_type_id"
+			not-null="true" class="AssetType" />
+		<set name="worksForAsset" cascade="all">
+			<key column="work_id" />
+			<one-to-many class="Works" />
+		</set>
+
+
+
+
+
+
+
+
+	</class>
+</hibernate-mapping>
